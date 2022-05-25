@@ -15,6 +15,6 @@ const EmployeesList = ({data}) => {
             {elements}
         </ul>
     );
-}
+} 
 
 export default EmployeesList;
