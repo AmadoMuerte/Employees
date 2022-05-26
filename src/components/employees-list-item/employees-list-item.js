@@ -28,6 +28,7 @@ class  EmployeesListItem extends Component {
     const {increase} = this.state;
     const {like} = this.state;
     let classNames = 'list-group-item d-flex justify-content-between';
+    
     if (increase) {
       classNames += ' increase';
     }
