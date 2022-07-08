@@ -10,7 +10,7 @@ import './app.css';
 
 class App extends Component {
     constructor(props) {
-        super(props); 
+        super(props);
         this.state = {
             data: [
                 {name: 'John C.', salary: 800, increase: false, rise: true, id: 1},
@@ -18,7 +18,7 @@ class App extends Component {
                 {name: 'Carl W.', salary: 5000, increase: false, rise: false, id: 3}
             ],
             term: '', 
-            filter: '',
+            filter: 'all'
         }
         this.maxId = 4;
     }
@@ -66,27 +66,27 @@ class App extends Component {
 
         return items.filter(item => {
             return item.name.indexOf(term) > -1
-        });
-    };
+        })
+    }
 
     onUpdateSearch = (term) => {
         this.setState({term});
     }
 
     filterPost = (items, filter) => {
-        switch(filter) {
+        switch (filter) {
             case 'rise':
                 return items.filter(item => item.rise);
             case 'moreThen1000':
                 return items.filter(item => item.salary > 1000);
-            default: 
-                return items;
+            default:
+                return items
         }
     }
 
     onFilterSelect = (filter) => {
         this.setState({filter});
-    };
+    }
 
     render() {
         const {data, term, filter} = this.state;
